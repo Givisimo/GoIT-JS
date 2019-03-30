@@ -1,10 +1,9 @@
 'use strict';
-
 // ================#1==================
 let message;
 const ADMIN_PASSWORD = 'm4ng0h4ckz';
 
-message = prompt('Введите пароль', 'pasword');
+message = prompt('Введите пароль');
 
 if (message == null) {
   message = 'Отменено пользователем!';
@@ -19,14 +18,14 @@ alert(message);
 // ================#2==================
 const credits = 23580;
 const pricePerDroid = 3000;
-let quantity = prompt('Количество купленных дроидов', '3, 5, 8, 12');
+let quantity = prompt('Количество купленных дроидов');
 let totalPrice;
 
 totalPrice = pricePerDroid * quantity;
 
 if (totalPrice > credits) {
   message = 'Недостаточно средств на счету!';
-} else if (message == null) {
+} else if (quantity === null) {
   message = 'Отменено пользователем!';
 } else {
   message = `Вы купили ${quantity} дроидов, на счету осталось ${credits -
@@ -36,28 +35,31 @@ if (totalPrice > credits) {
 console.log(message);
 
 // ================#3==================
-let country = prompt('Страна доставки');
+let countryInput = prompt('Страна доставки');
+
+let country = countryInput.toLowerCase();
 
 switch (country) {
-  case 'Китай':
+  case 'китай':
     message = 'Доставка в Китай будет стоить 100 кредитов';
     break;
 
-  case 'Южная Америка':
+  case 'южная америка':
     message = 'Доставка в Южную Америку будет стоить 250 кредитов';
     break;
 
-  case 'Австралия':
+  case 'австралия':
     message = 'Доставка в Австралию будет стоить 170 кредитов';
     break;
 
-  case 'Индия':
+  case 'индия':
     message = 'Доставка в Индию будет стоить 80 кредитов';
     break;
 
-  case 'Ямайка':
+  case 'ямайка':
     message = 'Доставка в Ямайку будет стоить 120 кредитов';
     break;
+
   default:
     message = 'В вашей стране доставка не доступна';
 }
