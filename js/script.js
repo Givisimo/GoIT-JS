@@ -1,5 +1,6 @@
 'use strict';
 // ================#1==================
+
 let message;
 const ADMIN_PASSWORD = 'm4ng0h4ckz';
 let userInput;
@@ -23,9 +24,7 @@ const pricePerDroid = 3000;
 let quantity = prompt('Количество купленных дроидов');
 let totalPrice;
 
-if (quantity === null) {
-  message = 'Отменено пользователем!';
-} else {
+if (quantity !== null) {
   totalPrice = pricePerDroid * quantity;
 }
 
@@ -34,6 +33,8 @@ if (totalPrice > credits) {
 } else if (totalPrice < credits) {
   message = `Вы купили ${quantity} дроидов, на счету осталось ${credits -
     totalPrice} кредитов`;
+} else {
+  message = 'Отменено пользователем!';
 }
 console.log(message);
 
