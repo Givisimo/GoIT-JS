@@ -21,69 +21,66 @@ const credits = 23580;
 const pricePerDroid = 3000;
 let quantity = prompt('Количество купленных дроидов');
 let totalPrice;
-let messageTask2;
 
 if (quantity === null) {
-  messageTask2 = 'Отменено пользователем!';
+  console.log('Отменено пользователем!');
 } else {
   totalPrice = pricePerDroid * quantity;
 }
 
 if (totalPrice > credits) {
-  messageTask2 = 'Недостаточно средств на счету!';
+  console.log('Недостаточно средств на счету!');
 } else if (totalPrice < credits) {
-  messageTask2 = `Вы купили ${quantity} дроидов, на счету осталось ${credits -
-    totalPrice} кредитов`;
+  console.log(
+    `Вы купили ${quantity} дроидов, на счету осталось ${credits -
+      totalPrice} кредитов`,
+  );
 }
-console.log(messageTask2);
 
 // ================#3==================
 
 let countryInput = prompt('Страна доставки');
 let price;
 let country;
-let messageTask3;
 
 if (countryInput !== null) {
   country = countryInput.toLowerCase();
 }
-
-switch (country) {
-  case 'китай':
-    country = 'Китай';
-    price = 100;
-    break;
-
-  case 'южная америка':
-    country = 'Южную Америку';
-    price = 250;
-    break;
-
-  case 'австралия':
-    country = 'Австралию';
-    price = 170;
-    break;
-
-  case 'индия':
-    country = 'Индию';
-    price = 80;
-    break;
-
-  case 'ямайка':
-    country = 'Ямайку';
-    price = 120;
-    break;
-
-  default:
-    messageTask3 = 'В вашей стране доставка не доступна';
-}
-
 if (countryInput === null) {
-  messageTask3 = 'Отменено пользователем';
-  console.log(messageTask3);
-} else if (messageTask3 === 'В вашей стране доставка не доступна') {
-  console.log(messageTask3);
+  console.log('Отменено пользователем');
 } else {
-  messageTask3 = `Доставка в ${country} будет стоить ${price} кредитов`;
-  console.log(messageTask3);
+  switch (country) {
+    case 'китай':
+      country = 'Китай';
+      price = 100;
+      console.log(`Доставка в ${country} будет стоить ${price} кредитов`);
+      break;
+
+    case 'южная америка':
+      country = 'Южную Америку';
+      price = 250;
+      console.log(`Доставка в ${country} будет стоить ${price} кредитов`);
+      break;
+
+    case 'австралия':
+      country = 'Австралию';
+      price = 170;
+      console.log(`Доставка в ${country} будет стоить ${price} кредитов`);
+      break;
+
+    case 'индия':
+      country = 'Индию';
+      price = 80;
+      console.log(`Доставка в ${country} будет стоить ${price} кредитов`);
+      break;
+
+    case 'ямайка':
+      country = 'Ямайку';
+      price = 120;
+      console.log(`Доставка в ${country} будет стоить ${price} кредитов`);
+      break;
+
+    default:
+      console.log('В вашей стране доставка не доступна');
+  }
 }
