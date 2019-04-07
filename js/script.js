@@ -30,7 +30,7 @@ if (quantity === null) {
 
 if (totalPrice > credits) {
   console.log('Недостаточно средств на счету!');
-} else if (totalPrice < credits) {
+} else if (totalPrice <= credits) {
   console.log(
     `Вы купили ${quantity} дроидов, на счету осталось ${credits -
       totalPrice} кредитов`,
